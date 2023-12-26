@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_welcome_page/shared/themes.dart';
+import 'package:flutter_simple_welcome_page/widgets/bottom_modal.dart';
 import 'package:flutter_simple_welcome_page/widgets/buttons.dart';
 import 'package:flutter_simple_welcome_page/widgets/services.dart';
 
@@ -53,68 +54,79 @@ class WelcomePage extends StatelessWidget {
                         const SizedBox(
                           height: 40,
                         ),
-                        Container(
-                          child: Column(
-                            children: [
-                              Text(
-                                'Free 7-Day Trial',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: textTitleColor,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        'Annual plan',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            color: primaryColor,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                      Icon(
-                                        Icons.chevron_right,
-                                        color: primaryColor,
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    width: 6,
-                                  ),
-                                  const Text(
-                                    '\$59.99/Year',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
+                        Column(
+                          children: [
+                            Text(
+                              'Free 7-Day Trial',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: textTitleColor,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Annual plan',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: primaryColor,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 30,
-                              ),
-                              const CustomFilledButton(
-                                title: 'Start Free Trial',
-                                width: 250,
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'No charge until 12/31/2023 • Cancel anytime',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: textBodyColor,
+                                    Icon(
+                                      Icons.chevron_right,
+                                      color: primaryColor,
+                                    ),
+                                  ],
                                 ),
-                              )
-                            ],
-                          ),
+                                const SizedBox(
+                                  width: 6,
+                                ),
+                                const Text(
+                                  '\$59.99/Year',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            CustomFilledButton(
+                              title: 'Start Free Trial',
+                              width: 250,
+                              onPressed: () {
+                                showModalBottomSheet<void>(
+                                    context: context,
+                                    isScrollControlled: true,
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(30),
+                                      ),
+                                    ),
+                                    builder: (BuildContext context) {
+                                      return const BottomModal();
+                                    });
+                              },
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'No charge until 12/31/2023 • Cancel anytime',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: textBodyColor,
+                              ),
+                            )
+                          ],
                         )
                       ],
                     ),

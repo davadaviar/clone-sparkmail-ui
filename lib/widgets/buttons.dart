@@ -22,7 +22,7 @@ class CustomFilledButton extends StatelessWidget {
         height: height,
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
         child: TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
@@ -30,7 +30,7 @@ class CustomFilledButton extends StatelessWidget {
               )),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: Colors.white,
