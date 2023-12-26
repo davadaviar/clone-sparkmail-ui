@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_welcome_page/shared/themes.dart';
-import 'package:flutter_simple_welcome_page/widgets/item_list.dart';
+import 'package:flutter_simple_welcome_page/widgets/service_list.dart';
 
 class Services extends StatelessWidget {
   const Services({super.key});
@@ -48,34 +48,7 @@ class Services extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const ItemList(title: 'Spark', subtitle: 'Write better email fast'),
-          const SizedBox(
-            height: 15,
-          ),
-          const ItemList(
-              title: 'Priority Email', subtitle: 'Highlight important emails'),
-          const SizedBox(
-            height: 15,
-          ),
-          const ItemList(
-              title: 'Gatekeeper', subtitle: 'Block unwanted emails'),
-          const SizedBox(
-            height: 15,
-          ),
-          const ItemList(
-              title: 'Group by Sender', subtitle: 'Organize your inbox'),
-          const SizedBox(
-            height: 15,
-          ),
-          const ItemList(
-              title: 'Mute threads',
-              subtitle: 'Silence irrelevant conversations'),
-          const SizedBox(
-            height: 15,
-          ),
-          const ItemList(
-              title: 'Large Attachments',
-              subtitle: 'Seemlessly send large files'),
+          const ServiceList(),
         ],
       ),
     );
